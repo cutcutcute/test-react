@@ -1,0 +1,20 @@
+
+
+@mixin horizontal-padding($value){
+    padding-left: $value;
+    padding-right: $value;
+}
+
+@mixin transition-theme-handle{
+    transition-property:background-color, color;
+    transition-duration:$transit-duration;
+    transition-timing-function: $transit-timing-function;
+}
+
+@mixin max-border{
+    position: relative;
+    width:100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+
+}

@@ -1,0 +1,72 @@
+
+@import "reset";
+@import "mixins";
+
+$white:#fff;
+$black:#000;
+$transit-duration: .2s;
+$transit-timing-function: ease-in;
+
+/*for light theme application*/
+%light-theme{
+    background-color:$white;
+    color:$black;
+}
+
+/*for dark theme application*/
+%dark-theme{
+    background-color: $black;
+    color: $white;
+}
+
+%flex-row-center{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+}
+
+
+.light {
+    @extend %light-theme;
+    @include transition-theme-handle;
+
+}
+
+.dark{
+    @extend %dark-theme;
+    @include transition-theme-handle;
+}
+
+
+
+
+.header{
+    @include max-border;
+    @extend %flex-row-center;
+    box-shadow: 0 0 5px $black;
+    justify-content: flex-start;
+    padding-left: 10px;
+    height:60px;
+
+    &__nav{
+        position: relative;
+        width: clamp(580px, 80%, 1200px);
+        min-width:580px;
+        height: 50%;
+        border: 1px solid black;
+        @extend %flex-row-center;
+        justify-content: space-between;
+
+
+        &-item{
+            position: relative;
+            @include horizontal-padding(10px);
+            font-size: clamp(16px, 18px, 24px);
+        }
+    }
+ 
+}
+
+
