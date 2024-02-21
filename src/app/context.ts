@@ -1,4 +1,4 @@
 
-import { createContext } from "react"
+import React, { createContext } from "react"
 
-export const ThemeContext = createContext("white");
+export const ThemeContext: React.Context<string> = createContext("white");

@@ -7,7 +7,7 @@ import { useResize } from "../app/hooks/useResizeHook";
 import { HeaderButton } from "../shared/buttons/HeaderButton";
 import { SectionMenu } from "./sidebar";
 
-export const Header = (props: any)=>{
+export const Header = (props: any): React.JSX.Element => {
 
     const [sidebarIsOpen, handleSidebarStatus] = useState(false);
 
