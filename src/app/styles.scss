@@ -1,6 +1,8 @@
 
 @import "reset";
 @import "mixins";
+@import "parrent";
+
 
 $white:#fff;
 $black:#000;
@@ -28,6 +30,11 @@ $transit-timing-function: ease-in;
 }
 
 
+img{
+    @extend %icons-cover-in-block;
+    
+}
+
 .light {
     @extend %light-theme;
     @include transition-theme-handle;
@@ -46,27 +53,54 @@ $transit-timing-function: ease-in;
     @include max-border;
     @extend %flex-row-center;
     box-shadow: 0 0 5px $black;
-    justify-content: flex-start;
-    padding-left: 10px;
+    justify-content: space-between;
+    @include horizontal-padding(10px);
+    z-index: var(--header-z-index);
     height:60px;
 
     &__nav{
         position: relative;
         width: clamp(580px, 80%, 1200px);
         min-width:580px;
-        height: 50%;
+        height: 90%;
         border: 1px solid black;
         @extend %flex-row-center;
         justify-content: space-between;
 
 
         &-item{
-            position: relative;
             @include horizontal-padding(10px);
+            @include transition-theme-handle;
+            position: relative;
             font-size: clamp(16px, 18px, 24px);
+            cursor: pointer;
+
+            &:hover{
+                color:#dd02b9;
+            }
+        }
+
+        &-settings{
+            position:relative;
+            @include horizontal-padding(10px);
+            height:90%;
+            aspect-ratio: 1/1;
+            border: 1px solid black;
+            cursor: pointer;
+
+    
         }
     }
  
 }
 
 
+.section-menu{
+    @include horizontal-padding(10px);
+    position: absolute;
+    z-index: var(--sidebar-z-index);
+    height: 60vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .85);
+    border-radius: 0 0 20px 20px;
+}

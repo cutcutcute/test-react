@@ -1,0 +1,7 @@
+
+@import "../parrent";
+
+
+.innerBlock{
+    @extend %inner-block;
+}
